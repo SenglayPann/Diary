@@ -1,0 +1,6 @@
+readme.md
+*.DS_Store
+*.log
+*.logs
+*.vscode
+*.reviewboardrc
