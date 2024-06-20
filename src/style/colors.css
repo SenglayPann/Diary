@@ -1,0 +1,13 @@
+:root {
+    --green-primary: #2EE4B1;
+    --green-secondary: #A0F28A;
+    --blue-primary: #3498DB;
+    --blue-secondary: #00B5E4;
+    --yellow: #F9F871;
+    --black-primary: #050505;
+    --black-secondary: #333333;
+    --gray-primary: #F2F2F2;
+    --gray-secondary: #C0C0C0;
+    --gradient-primary: linear-gradient(45deg, #2EE4B1, #3498DB, #F9F871);
+    --shadow-primary: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}

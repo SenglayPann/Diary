@@ -1,0 +1,92 @@
+@import url(./colors.css);
+
+:root {
+    --dark-mode-toggler-container-height: 25px;
+    --dark-mode-toggler-height: 30px;
+}
+
+nav {
+    font-family: 'Shameimaru Sans';
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100vw;
+    padding: 20px 50px;
+    background: var(--gradient-primary);
+}
+
+#navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(10px); 
+    z-index: -1;
+}
+
+
+#site-name {
+    font-size: 18px;
+    color: var(--black-secondary);
+}
+
+#dark-mode-toggler {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 60px;
+    height: var(--dark-mode-toggler-container-height);
+    border-radius: 26px;
+    border: 1px solid var(--yellow);
+    background-color: transparent;
+    box-shadow: var(--shadow-primary);
+}
+
+#dark-mode-toggler::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(10px); 
+    z-index: -1;
+}
+
+#toggler-handle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--dark-mode-toggler-height);
+    height: var(--dark-mode-toggler-height);
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: var(--shadow-primary);
+    transition: all .3s ease-in;
+}
+
+#toggler-handle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(10px); 
+    z-index: -1;
+}
+
+.clicked-dark-mode {
+    transform: translateX(100%);
+}
+

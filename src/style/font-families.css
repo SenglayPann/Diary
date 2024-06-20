@@ -1,0 +1,309 @@
+/* Raleway font */
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayBlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayBoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayExtrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayExtraboldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayExtralight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayExtralightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayHeavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayLightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayMediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewaySemibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewaySemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayThin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayThin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/Raleway/RalewayThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+.font-raleway {
+    font-family: 'Raleway';
+}
+
+/* Trueno font */
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/Trueno-75PE.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/Trueno-wml2.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoBlack-mBYV.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoBlackItalic-dXnl.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoBlackOutline-P43P.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoBlackOutlineItalic-LLEy.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoBold-XYE2.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoBoldItalic-g4B3.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoBoldOutline-oYMq.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoBoldOutlineItalic-454Y.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoExtrabold-05gr.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoExtraboldItalic-eg10.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoExtraboldOutline-W8J9.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoExtraboldOutlineItalic-adaJ.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoLight-E2pg.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoLightItalic-OoMo.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoSemibold-Z9yI.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoSemiboldItalic-35ZY.otf') format('opentype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoUltrablack-xdnV.otf') format('opentype');
+    font-weight: 950;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoUltrablackItalic-prwv.otf') format('opentype');
+    font-weight: 950;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoUltralight-DXax.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('./fonts/Trueno/TruenoUltralightItalic-AYmD.otf') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+/* Shameimaru-Sans */
+
+
+@font-face {
+    font-family: 'Shameimaru Sans';
+    src: url('./fonts/Shameimaru-Sans/ShameimaruSans-9VX0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Shameimaru Sans Alternatives';
+    src: url('./fonts/Shameimaru-Sans/ShameimaruSansAlternatives-lwKq.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
