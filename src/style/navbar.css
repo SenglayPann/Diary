@@ -1,7 +1,8 @@
 @import url(./colors.css);
 
 :root {
-    --dark-mode-toggler-container-height: 25px;
+    --dark-mode-toggler-container-height: 20px;
+    --dark-mode-toggler-container-width: 50px;
     --dark-mode-toggler-height: 30px;
 }
 
@@ -10,12 +11,15 @@ nav {
 }
 
 #navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
     width: 100vw;
-    padding: 20px 50px;
+    padding: 15px 25px;
     background: var(--gradient-primary);
 }
 
@@ -41,7 +45,7 @@ nav {
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 60px;
+    width: var(--dark-mode-toggler-container-width);
     height: var(--dark-mode-toggler-container-height);
     border-radius: 26px;
     border: 1px solid var(--yellow);
@@ -88,7 +92,7 @@ nav {
 }
 
 .clicked-dark-mode {
-    transform: translateX(100%);
+    transform: translateX(calc(var(--dark-mode-toggler-container-width) - var(--dark-mode-toggler-height)));
 }
 
 .is-hidden {
@@ -99,3 +103,19 @@ nav {
     background-color: var(--black-primary) !important;
 }
 
+@media (min-width: 912px) {
+    #navbar {
+        padding: 20px 50px;
+    }
+    :root {
+        --dark-mode-toggler-container-height: 25px;
+        --dark-mode-toggler-container-width: 60px;
+        --dark-mode-toggler-height: 30px;
+    }
+}
+
+@media (min-width: 1442px) {
+    #navbar {
+        padding: 20px 70px;
+    }
+}
