@@ -17,6 +17,7 @@
             <div id="dark-mode-toggler">
                 <div id="toggler-handle">
                     <img src="./assets/icons/sun.svg" alt="">
+                    <img class="is-hidden" src="./assets/icons/moon.svg" alt="">
                 </div>
             </div>
         </nav>
@@ -27,8 +28,14 @@
 <script>
     const themeTogglerHandle = document.getElementById('toggler-handle');
     const themeTogglerHandleContainer = document.getElementById('dark-mode-toggler');
+    const navbar = document.getElementById('navbar');
 
     themeTogglerHandleContainer.addEventListener('click', () => {
-        themeTogglerHandle.classList.toggle('clicked-dark-mode')
-    })
+        navbar.classList.toggle('dark')
+        themeTogglerHandle.classList.toggle('is-bg-black');
+        themeTogglerHandle.classList.toggle('clicked-dark-mode'); // move the dark mode handle toggler
+        themeTogglerHandle.children[0].classList.toggle('is-hidden');
+        themeTogglerHandle.children[1].classList.toggle('is-hidden');
+
+    });
 </script>

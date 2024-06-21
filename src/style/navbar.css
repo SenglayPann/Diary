@@ -83,10 +83,19 @@ nav {
     bottom: 0;
     background: inherit;
     filter: blur(10px); 
-    z-index: -1;
+    opacity: .8;
+    z-index: 2;
 }
 
 .clicked-dark-mode {
     transform: translateX(100%);
+}
+
+.is-hidden {
+    display: none;
+}
+
+.is-bg-black {
+    background-color: var(--black-primary) !important;
 }
 
