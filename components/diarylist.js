@@ -1,7 +1,21 @@
 // Function to get diary entries from local storage
 function getDiaryEntries() {
     const entries = localStorage.getItem('diaryEntries');
-    return entries ? JSON.parse(entries) : [];
+    return entries ? JSON.parse(entries) : [
+        {
+            "id": "1",
+            "title": "My First Diary",
+            "date": "2024-06-21",
+            "content": "Today was a great day!"
+        },
+        {
+            "id": "2",
+            "title": "Reflecting on the Week",
+            "date": "2024-06-22",
+            "content": "This week was filled with challenges and achievements."
+        },
+        // Additional entries as needed
+    ];
 }
 
 class Diarylist extends HTMLElement {
@@ -39,9 +53,9 @@ class Diarylist extends HTMLElement {
         // Loop through each diary entry and create HTML
         diaryEntries.forEach(entry => {
             const diaryCard = document.createElement('div');
-            diaryCard.classList.add('diary-card');
+            diaryCard.classList.add('diary-card', 'diary-container-item');
             diaryCard.innerHTML = `
-                <div>
+                <div class="diary-main-content">
                     <!-- card header -->
                     <div class="header-container">
                         <div class="header-left">
@@ -66,7 +80,7 @@ class Diarylist extends HTMLElement {
 
         // Add a diary card adder button
         diaryContainer.innerHTML += `
-            <div id="diary-card-adder">
+            <div id="diary-card-adder" class="diary-container-item">
                 <div id="add-sign">+</div>
             </div>
         `;
