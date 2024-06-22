@@ -1,5 +1,5 @@
 @import url('./component-styles/navbar.css');
-@import url('./component-styles/body.css');
+@import url('./component-styles/diary-list.css');
 
 * {
     box-sizing: border-box;
