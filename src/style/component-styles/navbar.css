@@ -1,4 +1,4 @@
-@import url(./colors.css);
+@import url(../root-styles/root.css);
 
 :root {
     --dark-mode-toggler-container-height: 20px;
@@ -11,9 +11,6 @@ nav {
 }
 
 #navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,7 +34,7 @@ nav {
 
 
 #site-name {
-    font-size: 18px;
+    font-size: var(--fs3);
     color: var(--black-secondary);
 }
 
@@ -51,6 +48,7 @@ nav {
     border: 1px solid var(--yellow);
     background-color: transparent;
     box-shadow: var(--shadow-primary);
+    cursor: pointer;
 }
 
 #dark-mode-toggler::before {
@@ -75,7 +73,7 @@ nav {
     border-radius: 50%;
     background-color: white;
     box-shadow: var(--shadow-primary);
-    transition: all .3s ease-in;
+    transition: all .25s ease;
 }
 
 #toggler-handle::before {
@@ -86,7 +84,7 @@ nav {
     right: 0;
     bottom: 0;
     background: inherit;
-    filter: blur(10px); 
+    filter: blur(12px); 
     opacity: .8;
     z-index: 2;
 }
@@ -101,6 +99,13 @@ nav {
 
 .is-bg-black {
     background-color: var(--black-primary) !important;
+}
+
+.absolute-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 @media (min-width: 912px) {

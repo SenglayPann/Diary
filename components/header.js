@@ -15,6 +15,7 @@ class Header extends HTMLElement {
             </div>
         </nav>
         `;
+        this.setAttribute('class', 'absolute-item')
 
         const themeTogglerHandle = document.getElementById('toggler-handle');
         const themeTogglerHandleContainer = document.getElementById('dark-mode-toggler');
