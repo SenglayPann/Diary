@@ -14,6 +14,7 @@
     --gray-secondary: #C0C0C0;
     --gradient-secondary: linear-gradient(36deg, #3498DB, var(--purple), #F9F871);
     --gradient-primary: linear-gradient(45deg, #2EE4B1, var(--purple), #F9F871);
+    --gradient-third: linear-gradient(45deg, #2EE4B1, var(--blue-secondary) , var(--purple) , var(--yellow));
     --shadow-primary: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
     --shadow-secondary: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     --text-sd1: 1px 1px 3px rgba(0, 0, 0, 0.3);

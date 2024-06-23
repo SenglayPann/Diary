@@ -250,6 +250,7 @@
 #float-diary-adder:hover::before {
     transform: scale(1.1);
 }
+
 @media (min-width: 912px) {
     :root { 
         --pd-body: 65px;
