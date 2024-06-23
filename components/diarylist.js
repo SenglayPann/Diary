@@ -42,6 +42,8 @@ class Diarylist extends HTMLElement {
                 <!-- card area -->
                 <div id="diary-card-container"></div>
             </div>
+
+            <div id="float-diary-adder" class="diary-add-botton">+</div>
         `;
 
         const diaryContainer = this.querySelector('#diary-card-container');
@@ -59,8 +61,8 @@ class Diarylist extends HTMLElement {
                     <!-- card header -->
                     <div class="header-container">
                         <div class="header-left">
-                            <div class="title truncate">${entry.title}</div>
                             <div class="date">${entry.date}</div>
+                            <div class="title truncate">${entry.title}</div>
                         </div>
                     </div>
 
@@ -71,8 +73,8 @@ class Diarylist extends HTMLElement {
                 </div>
 
                 <div class="header-right">
-                    <img class="edit-button" src="./assets/icons/edit.svg" alt="">
-                    <img class="delete-button" src="./assets/icons/trash.svg" alt="">
+                    <img class="edit-botton" src="./assets/icons/edit.svg" alt="">
+                    <img class="delete-botton" src="./assets/icons/trash.svg" alt="">
                 </div>
             `;
             diaryContainer.appendChild(diaryCard);
@@ -80,7 +82,7 @@ class Diarylist extends HTMLElement {
 
         // Add a diary card adder button
         diaryContainer.innerHTML += `
-            <div id="diary-card-adder" class="diary-container-item">
+            <div id="diary-card-adder" class="diary-container-item diary-add-botton">
                 <div id="add-sign">+</div>
             </div>
         `;
