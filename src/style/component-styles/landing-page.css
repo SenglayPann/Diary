@@ -88,6 +88,8 @@
     border: 1px solid var(--black-primary);
     font-weight: 700;
     cursor: pointer;
+    color: var(--green-secondary);
+    letter-spacing: .1em;
     transition: scale .35s ease, color .35s ease;
 }
 
@@ -129,6 +131,40 @@
     text-shadow: var(--shadow-primary);
 }
 
+#landing-page-block1>div.wellcome-phrase {
+    margin-top: calc(var(--mg6) * -1);
+}
+
+.form {
+    font-family: 'Trueno';
+    font-weight: 300;
+    width: 80vw;
+}
+
+.input-field {
+    margin-top: var(--mg3);
+}
+
+.label {
+    margin-bottom: var(--mg2);
+}
+
+input {
+    width: 100%;
+    border-radius: var(--br2);
+    border: none;
+    outline: 2px solid transparent;
+    padding: var(--pd3) var(--pd4);
+    box-shadow: var(--shadow-secondary);
+    transition: box-shadow 0.3s ease, outline 0.3s ease;
+
+}
+
+input:focus {
+    box-shadow: var(--shadow-primary);
+    outline: 2px solid var(--green-primary);
+}
+
 .slide-right {
     /* transform: translateX(-50vw); */
     animation: slide-to-right  1.2s ;
@@ -165,6 +201,7 @@
 
 
 @media (min-width: 912px) {
+
     #landing-page-content {
         flex-direction: row;
         justify-content: center;
@@ -182,7 +219,7 @@
     }
 
     #landing-page-block2>div {
-        max-width: 556px;
+        max-width: var(--w1);
         font-size: var(--fs4);
 
     }
@@ -193,5 +230,21 @@
         padding: var(--pd4) var(--pd6);
     }
 
+    #landing-page-block2>.form {
+        margin-left: var(--mg5);
+        max-width: 456px;
+    }
 
+    input {
+        padding: var(--pd4) var(--pd5);
+        font-size: var(--fs3);
+    }
+}
+
+
+@media (min-width: 1224px) {
+    #landing-page-block2>.form {
+        max-width: var(--w1);
+        font-size: var(--fs4);
+    }
 }
