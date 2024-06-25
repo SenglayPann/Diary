@@ -40,10 +40,11 @@
     display: flex;
     /* justify-content: center; */
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     /* overflow: hidden; */
     padding: 0 var(--pd3);
-    padding-top: 184px;
+    /* padding-top: 184px; */
 }
 
 #landing-page-block1 {
@@ -132,7 +133,7 @@
 }
 
 #landing-page-block1>div.wellcome-phrase {
-    margin-top: calc(var(--mg6) * -1);
+    /* margin-top: calc(var(--mg6) * -1); */
 }
 
 #landing-page-block1, #landing-page-block2 {
@@ -263,7 +264,7 @@ input:hover {
 
     #landing-page-block1>div {
        max-width: 760px;
-       font-size: 62px;
+       font-size: var(--fs-tab);
     }
 
     #landing-page-block1>img {
