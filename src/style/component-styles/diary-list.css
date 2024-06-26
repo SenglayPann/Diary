@@ -16,6 +16,40 @@
     text-overflow: ellipsis;
 }
 
+#diary-form {
+    max-width: 1344px;
+}
+
+#create-diary-button, #discard-diary-button {
+    padding: var(--pd1) var(--pd2);
+    border-radius: var(--br1);
+    border: 1px solid var(--black-primary);
+    box-shadow: var(--shadow-secondary);
+    color: var(--black-secondary);
+    transition: scale .15s ease;
+}
+
+#create-diary-button {
+    margin-left: var(--mg3);
+    background: var(--green-primary);
+}
+
+#discard-diary-button {
+    background: var(--red-primary);
+}
+
+#create-diary-button:hover, #discard-diary-button:hover {
+    scale: 1.1;
+    box-shadow: var(--shadow-primary);
+}
+
+.empty-list {
+    font-family: 'Trueno';
+    font-weight: 200;
+    color: var(--gray-secondary);
+    text-align: center;
+    padding: calc(5vh) 0;
+}
 
 #body {
     display: flex; 
@@ -127,6 +161,18 @@
     box-shadow: var(--shadow-secondary);
     border: 1px solid var(--bg-color1);
     transition: box-shadow 0.15s ease, transform 0.15s ease, border 0.15s ease;
+}
+
+#diary-content{
+    width: 100%;
+    max-width: 100%;
+    min-height: 20vh;
+    padding: var(--pd3);
+}
+
+label {
+    display: block;
+    padding-bottom: var(--pd1);
 }
 
 .diary-main-content {
@@ -252,6 +298,19 @@
     transform: scale(1.1);
 }
 
+.navigator-item {
+    border: 1px dashed var(--blue-secondary);
+    padding: var(--pd1) var(--pd3);
+    border: 1px solid transparent;
+    /* width: 100%; */
+}
+
+.navigator-item.active {
+    border: 1px dashed var(--blue-secondary);
+    box-shadow: var(--shadow-secondary);
+    border-radius: var(--br1);
+}
+
 @media (min-width: 912px) {
     :root { 
         --pd-body: 65px;
@@ -284,12 +343,6 @@
         padding: var(--pd1) var(--pd3);
         border: 1px solid transparent;
         width: 100%;
-    }
-
-    .navigator-item.active {
-        border: 1px dashed var(--blue-secondary);
-        box-shadow: var(--shadow-secondary);
-        border-radius: var(--br1);
     }
 
     .navigator-item:hover {

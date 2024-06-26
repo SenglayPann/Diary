@@ -9,8 +9,8 @@ class Header extends HTMLElement {
             <div id="site-name">Diary Aplication</div>
             <div id="dark-mode-toggler">
                 <div id="toggler-handle">
-                    <img src="./assets/icons/sun.svg" alt="">
-                    <img class="is-hidden" src="./assets/icons/moon.svg" alt="">
+                    <img src="../assets/icons/sun.svg" alt="">
+                    <img class="is-hidden" src="../assets/icons/moon.svg" alt="">
                 </div>
             </div>
         </nav>
