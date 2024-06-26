@@ -23,6 +23,7 @@
     height: 100vh;
     flex-direction: column;
     padding-top: var(--pd-body);
+    position: relative;
 }
 
 #navigator-bar {
