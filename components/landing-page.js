@@ -5,12 +5,12 @@ class LandingPage extends HTMLElement {
 
     connectedCallback() {
 
-        // a function to retrieve custome local storage name
+        // A function to retrieve custom local storage name
         const retrieveStorage = (storageName) => {
             return JSON.parse(localStorage.getItem(storageName)) || [];
         }
 
-        // a fucntion to save a data to a custom local storage
+        // A function to save data to custom local storage
         const updateStorage = (storageName, data) => {
             localStorage.setItem(storageName, JSON.stringify(data));
         }
@@ -20,17 +20,16 @@ class LandingPage extends HTMLElement {
             userName: null
         }.loggedIn;
 
-        if (isAuth) {
+        if (isAuth === true) {
             window.location.href = './pages/content.html';
-        }else {
+        } else {
 
             const authContent = {
-                'block1' : [
+                'block1': [
                     `
                         <div>Welcome to Your Personal Diary</div>
                         <img src="./assets/interactive_graphics/book-with-scetch.png" alt="">
-                    `
-                    ,
+                    `,
                     `
                         <div id="landing-page-block1" class="fade-in-no-delay">
                             <div class="wellcome-phrase">Unlock Your Story. Sign up Start Writing Today!</div>
@@ -43,9 +42,9 @@ class LandingPage extends HTMLElement {
                         </div>
                     `
                 ],
-                'block2' : [
+                'block2': [
                     `   
-                        <div>this Capture <span>MOMENTS</span>, Share <span>MEMORIES</span>, and Reflect on Your <span>JOURNEY </span>!</div>
+                        <div>Capture <span>MOMENTS</span>, Share <span>MEMORIES</span>, and Reflect on Your <span>JOURNEY</span>!</div>
                         <button id="get-started-button">GET STARTED</button>
                     `,
                     `
@@ -127,7 +126,7 @@ class LandingPage extends HTMLElement {
                 </div>
             `;
     
-            //a functio to change content of the landing page
+            // A function to change content of the landing page
             const changeContent = (contentIndex) => {
                 const contentContainer = document.getElementById('landing-page-content');
                 const block1 = document.getElementById('landing-page-block1');
@@ -144,7 +143,7 @@ class LandingPage extends HTMLElement {
                 }, 1000);
             }
     
-            // a function that consider which function to attach with the conrrent content
+            // A function that considers which function to attach with the current content
             const attachEventListeners = () => {
                 const getStartedButton = document.getElementById('get-started-button');
                 const signInSwitchButton = document.getElementById('sign-in-switch-button');
@@ -156,74 +155,116 @@ class LandingPage extends HTMLElement {
     
                 if (signInSwitchButton) {
                     signInSwitchButton.addEventListener('click', () => changeContent(2));
-                    setupSignUp();
                 }
                 
                 if (signUpSwitchButton) {
                     signUpSwitchButton.addEventListener('click', () => changeContent(1));
                 }
-    
+
+                // Attach event listeners after content is updated
+                setTimeout(() => {
+                    setupSignIn();
+                    setupSignUp();
+                }, 0);
             }
     
-    
+            // A function to set up sign-up
             const setupSignUp = () => {
-                document.getElementById('sign-up-button').addEventListener('click', function () {
-                    const username = document.getElementById('username').value;
-                    const password = document.getElementById('password').value;
-                    const confirmPassword = document.getElementById('confirm-password').value;
+                const signUpButton = document.getElementById('sign-up-button');
+                if (signUpButton) {
+                    signUpButton.addEventListener('click', function () {
+                        const username = document.getElementById('username').value;
+                        const password = document.getElementById('password').value;
+                        const confirmPassword = document.getElementById('confirm-password').value;
     
-                    // Check if any field is empty
-                    if (!username || !password || !confirmPassword) {
-                        alert('All fields are required. Please fill in all the fields.');
-                        return;
-                    }
+                        // Check if any field is empty
+                        if (!username || !password || !confirmPassword) {
+                            alert('All fields are required. Please fill in all the fields.');
+                            return;
+                        }
     
-                    // Retrieve the existing profile array from local storage
-                    let profile = retrieveStorage('profile');
+                        // Retrieve the existing profile array from local storage
+                        let profile = retrieveStorage('profile');
     
-                    // Check if the username or password is already taken
-                    const isUsernameTaken = profile.some(user => user.user === username);
+                        // Check if the username or password is already taken
+                        const isUsernameTaken = profile.some(user => user.user === username);
     
-                    if (isUsernameTaken) {
-                        alert('Username is already taken. Please choose another one.');
-                        return;
-                    }
+                        if (isUsernameTaken) {
+                            alert('Username is already taken. Please choose another one.');
+                            return;
+                        }
     
-                    if (password === confirmPassword) {
-                        // Create a new user object
-                        const newUser = {
-                            user: username,
-                            password: password
-                        };
+                        if (password === confirmPassword) {
+                            // Create a new user object
+                            const newUser = {
+                                user: username,
+                                password: password
+                            };
     
-                        // Add the new user object to the profile array
-                        profile.push(newUser);
+                            // Add the new user object to the profile array
+                            profile.push(newUser);
     
-                        // Save the updated profile array to local storage
-                        updateStorage('profile', profile);
+                            // Save the updated profile array to local storage
+                            updateStorage('profile', profile);
     
-                        // Set the currentAuth object in local storage
-                        const currentAuth = {
-                            loggedIn: true,
-                            userName: username
-                        };
+                            // Set the currentAuth object in local storage
+                            const currentAuth = {
+                                loggedIn: true,
+                                userName: username
+                            };
     
-                        updateStorage('currentAuth', currentAuth)
+                            updateStorage('currentAuth', currentAuth)
     
-                        // Redirect to the diary list page
-                        window.location.href = './pages/diary-list.html';
-                    } else {
-                        alert('Passwords do not match. Please try again.');
-                    }
-                });
+                            // Redirect to the diary list page
+                            window.location.href = './pages/content.html';
+                        } else {
+                            alert('Passwords do not match. Please try again.');
+                        }
+                    });
+                }
+            }
+
+            // A function to set up sign-in
+            const setupSignIn = () => {
+                const signInButton = document.getElementById('sign-in-button');
+                if (signInButton) {
+                    signInButton.addEventListener('click', function () {
+                        const username = document.getElementById('username').value;
+                        const password = document.getElementById('password').value;
+    
+                        // Check if any field is empty
+                        if (!username || !password) {
+                            alert('All fields are required. Please fill in all the fields.');
+                            return;
+                        }
+    
+                        if (verifyUser(username, password)) {
+                            // Set the currentAuth object in local storage
+                            const currentAuth = {
+                                loggedIn: true,
+                                userName: username
+                            };
+    
+                            updateStorage('currentAuth', currentAuth);
+    
+                            // Redirect to the diary list page
+                            window.location.href = './pages/content.html';
+                        } else {
+                            alert('Invalid username or password. Please try again.');
+                        }
+                    });
+                }
+            }
+
+            // A function to verify if the username and password exist in local storage
+            const verifyUser = (username, password) => {
+                const profile = retrieveStorage('profile');
+                return profile.some(user => user.user === username && user.password === password);
             }
     
             attachEventListeners();
-            
         }
-
-        
     }
 }
 
-customElements.define('landing-page', LandingPage)
+customElements.define('landing-page', LandingPage);
