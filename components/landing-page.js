@@ -21,7 +21,7 @@ class LandingPage extends HTMLElement {
         }.loggedIn;
 
         if (isAuth) {
-            window.location.href = './pages/diary-list.html';
+            window.location.href = './pages/content.html';
         }else {
 
             const authContent = {

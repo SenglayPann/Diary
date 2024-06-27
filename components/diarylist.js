@@ -1,5 +1,5 @@
 import { renderDiaries } from '../src/js/crud/read.js';
-// import { showDiaryEditForm } from '../src/js/crud/diaryEditForm.js';
+import { period } from '../src/js/period.js';
 
 const Auth = JSON.parse(localStorage.getItem('currentAuth')) || {
     loggedIn: false,
@@ -19,6 +19,7 @@ class Diarylist extends HTMLElement {
             this.setAttribute('id', 'body');
 
             this.innerHTML = `
+                <div id="intro-container" class="desolve"><div id="intro">Please Wellcome <span class="auth-name">${Auth.userName}</span> 👋!</div></div>
                 <div id="navigator-bar">
                     <div class="navigator-item active"><a href="#">Diary list</a></div>
                     <div class="navigator-item"><a href="#">Dashboard</a></div>
@@ -27,7 +28,7 @@ class Diarylist extends HTMLElement {
                 <div id="main-content">
                     <!-- greeting phrase -->
                     <div id="greeting-phrase">
-                        <span class="big-phrase">Hello ${Auth.userName}! 👋 </span>
+                        <span class="big-phrase">Good ${period()} <span class="auth-name1">${Auth.userName}</span>! 👋 </span>
                         <span class="small-phrase">What is on your mind today?</span>
                     </div>
 
