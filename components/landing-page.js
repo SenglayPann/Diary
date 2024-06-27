@@ -15,15 +15,14 @@ class LandingPage extends HTMLElement {
             localStorage.setItem(storageName, JSON.stringify(data));
         }
 
-        const isAuth = JSON.parse(localStorage.getItem('currentAuth')) || {
+        const isAuth = JSON.parse(localStorage.getItem('currentAuth')).loggedIn || {
             loggedIn: false,
             userName: null
         }.loggedIn;
-
-        if (isAuth === true) {
+        console.log(isAuth)
+        if (isAuth) {
             window.location.href = './pages/content.html';
         } else {
-
             const authContent = {
                 'block1': [
                     `
