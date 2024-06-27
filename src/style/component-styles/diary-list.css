@@ -17,28 +17,33 @@
 }
 
 #diary-form {
+    font-family: 'Shameimaru Sans';
     max-width: 1344px;
 }
 
-#create-diary-button, #discard-diary-button {
+#create-diary-button, #discard-diary-button, #update-diary-button {
+    font-family: 'Trueno';
     padding: var(--pd1) var(--pd2);
-    border-radius: var(--br1);
-    border: 1px solid var(--black-primary);
+    border-radius: var(--br2);
+    border: 1px solid var(--purple);
     box-shadow: var(--shadow-secondary);
     color: var(--black-secondary);
+    font-weight: 400;
     transition: scale .15s ease;
 }
 
-#create-diary-button {
+
+
+#create-diary-button, #update-diary-button {
     margin-left: var(--mg3);
-    background: var(--green-primary);
+    background: var(--green-secondary);
 }
 
 #discard-diary-button {
-    background: var(--red-primary);
+    background: var(--red-third);
 }
 
-#create-diary-button:hover, #discard-diary-button:hover {
+#create-diary-button:hover, #discard-diary-button:hover, #update-diary-button:hover {
     scale: 1.1;
     box-shadow: var(--shadow-primary);
 }
@@ -95,11 +100,20 @@
     padding: var(--pd6) 0;
 }
 
-.edit-botton {
+.edit-button, .delete-button {
+    border: none;
+    transition: scale .3s ease;
+}
+
+.edit-button:hover, .delete-button:hover {
+    scale: 1.05;
+}
+
+.edit-button {
     width: 14px;
 }
 
-.delete-botton {
+.delete-button {
     width: 16px;
 }
 
@@ -374,11 +388,11 @@ label {
         min-height: var(--he3);
     }
 
-    .edit-botton {
+    .edit-buton {
         width: 16px;
     }
 
-    .delete-botton {
+    .delete-button {
         width: 18px;
     }
 
@@ -392,6 +406,10 @@ label {
         height: 54px;
         bottom: calc(var(--mg5) + 46px);
         right: calc(var(--mg5) + 36px);
+    }
+
+    #create-diary-button, #discard-diary-button, #update-diary-button {
+        padding: var(--pd2) var(--pd3);
     }
 }
 
