@@ -68,7 +68,7 @@
 .auth-name {
     color: var(--green-primary);
     text-shadow: var(--shadow-primary);
-    font-size: var(--fs5);
+    font-size: var(--fs6) !important;
 }
 
 .auth-name1 {
@@ -394,6 +394,42 @@ label {
     border-radius: var(--br1);
 }
 
+.dashboard {
+    width: 100%;
+    display: flex;
+}
+
+#statistic {
+    font-family: 'Trueno';
+    width: 100%;
+    margin: var(--mg2);
+}
+
+.statistic-item {
+    border-radius: var(--br2);
+    box-shadow: var(--shadow-secondary);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--pd6);
+    transition: box-shadow .3s ease;
+    margin-bottom: var(--mg5);
+}
+
+.statistic-item:hover {
+    box-shadow: var(--shadow-primary);
+}
+
+.statistic-item>span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--blue-secondary);
+    width: var(--w4);
+    height: var(--he4);
+}
 .fade-in1 {
     animation: fadeIn .5s ease;
 }
@@ -487,6 +523,7 @@ label {
 
     #diary-card-container {
         gap: var(--gap5);
+        padding: var(--pd2);
     }
 
     #greeting-phrase {
@@ -564,6 +601,12 @@ label {
 
     #create-diary-button, #discard-diary-button, #update-diary-button {
         padding: var(--pd2) var(--pd3);
+    }
+
+    .statistic-item>span {
+        width: calc(var(--w4) + 15px);
+        height: calc(var(--he4) + 15px);
+        border: 2px dashed var(--blue-secondary);
     }
 }
 
