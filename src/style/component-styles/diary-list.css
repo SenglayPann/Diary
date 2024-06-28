@@ -403,6 +403,9 @@ label {
     font-family: 'Trueno';
     width: 100%;
     margin: var(--mg2);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .statistic-item {
@@ -415,6 +418,7 @@ label {
     padding: var(--pd6);
     transition: box-shadow .3s ease;
     margin-bottom: var(--mg5);
+    max-width: var(--mw2);
 }
 
 .statistic-item:hover {
@@ -426,7 +430,7 @@ label {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    border: 1px solid var(--blue-secondary);
+    border: 1px dashed var(--blue-secondary);
     width: var(--w4);
     height: var(--he4);
 }

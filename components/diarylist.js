@@ -20,7 +20,7 @@ class Diarylist extends HTMLElement {
             this.setAttribute('id', 'body');
 
             this.innerHTML = `
-                <!-- <div id="intro-container" class="desolve"><div id="intro">Please Wellcome <span class="auth-name">${Auth.userName}</span> 👋!</div></div>  -->
+                <div id="intro-container" class="desolve"><div id="intro">Please Wellcome <span class="auth-name">${Auth.userName}</span> 👋!</div></div>
                 <div id="navigator-bar">
                     <div id="diary-entry-content-button" class="navigator-item active"><a href="#">Diary Entries</a></div>
                     <div id="dashboard-entry-content-button" class="navigator-item"><a href="#">Dashboard</a></div>
