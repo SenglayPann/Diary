@@ -33,6 +33,67 @@
 
 }
 
+#alert-modal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+#alert-modal {
+    font-family: 'Trueno';
+    position: relative;
+    width: var(--w3);
+    min-width: var(--w2);
+    padding: var(--pd6);
+    margin: var(--mg6);
+    border-radius: var(--br2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color1);
+    gap: var(--gap3);
+    text-align: center;
+}
+
+#semi-alert-modal-closing-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#semi-alert-modal-closing-button> img {
+    width: 32px;
+}
+
+#alert-modal>img {
+    width: 100px;
+}
+
+#alert-modal button {
+    padding: var(--pd2) var(--pd6);
+    background-color: transparent;
+    border: 1px solid var(--black-primary);
+    border-radius: var(--br1);
+    transition: all .15s ease;
+}
+
+#alert-modal button:hover {
+    border: 1px solid var(--green-primary);
+    background: var(--black-primary);
+    color: white;
+    border-radius: var(--br1);
+}
+
 #landing-page-content {
     font-family: 'Shameimaru Sans';
     color: var(--black-primary);
@@ -132,9 +193,6 @@
     text-shadow: var(--shadow-primary);
 }
 
-#landing-page-block1>div.wellcome-phrase {
-    /* margin-top: calc(var(--mg6) * -1); */
-}
 
 #landing-page-block1, #landing-page-block2 {
     transition: opacity .5s ease;
@@ -204,8 +262,16 @@ input:hover {
     animation: fade-in-no-delay .5s;
 }
 
+.fade-in-no-delay-2 {
+    animation: fade-in-no-delay .3s;
+}
+
 .fade-out-no-delay {
     animation: fade-out-no-delay 1.1s;
+}
+
+.fade-out-no-delay-1 {
+    animation: fade-out-no-delay .3s;
 }
 
 @keyframes slide-to-right {
@@ -260,6 +326,27 @@ input:hover {
         padding-top: 0;
         padding: 0 var(--pd-body);
         gap: var(--gap3);
+    }
+
+    #alert-modal {
+        position: relative;
+        width: var(--w1);
+        min-width: var(--w3);
+        padding: var(--pd6);
+        margin: var(--mg6);
+        border-radius: var(--br3);
+    }
+
+    #alert-modal>img {
+        width: 123px;
+    }
+
+    #alert-modal button {
+        padding: calc(var(--pd2) * 1.5) calc(var(--pd6) * 1.5);
+        background-color: transparent;
+        border: 1px solid var(--black-primary);
+        border-radius: var(--br2);
+        transition: all .15s ease;
     }
 
     #landing-page-block1>div {

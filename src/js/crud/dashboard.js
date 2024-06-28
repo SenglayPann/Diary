@@ -11,8 +11,6 @@ export const showDashboard = () => {
     // Retrieve userData from localStorage
     const userData = retrieveStorage('userData');
     const currentUser = Auth.userName; // Assuming Auth.userName gives the current user's name
-    console.log(currentUser);
-    console.log(userData);
 
     // Initialize diary counts
     let totalDiaries = 0;

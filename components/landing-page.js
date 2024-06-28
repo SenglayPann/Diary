@@ -5,27 +5,72 @@ class LandingPage extends HTMLElement {
 
     connectedCallback() {
 
+        let isDisplayModal = false;
+
+        // a function to create alert modal
+        const createAlertModal = (message) => {
+            isDisplayModal = true
+            const landingPageContent = document.getElementById('landing-page-content');
+            const alertModalContainer = document.createElement('div');
+            alertModalContainer.setAttribute('id', 'alert-modal-container');
+            alertModalContainer.setAttribute('class', 'fade-in-no-delay-2');
+            alertModalContainer.innerHTML = `
+                <div id="alert-modal">
+                    <div class="alert-modal-closing-button" id="semi-alert-modal-closing-button">
+                        <img src="./assets/icons/close.svg">
+                    </div>
+                    <img src="./assets/interactive_graphics/exclamation-mark.png" alt="">
+                    <p>${message}<p/>
+                    <button class="alert-modal-closing-button">OK</button>
+                <div>
+            `;
+            landingPageContent.appendChild(alertModalContainer) 
+
+            Array.from(document.getElementsByClassName('alert-modal-closing-button')).forEach(button => button.addEventListener('click', () => {
+                
+                alertModalContainer.classList.add('fade-out-no-delay-1')
+                setTimeout(() => {
+                    closeAlertModal();
+                }, 290);
+            }));
+        };
+
+        // a function to close the alert modal
+        const closeAlertModal = () => {
+            isDisplayModal = false;
+            const landingPageContent = document.getElementById('landing-page-content');
+            landingPageContent.removeChild(landingPageContent.lastElementChild);
+
+        };
+
         // A function to retrieve custom local storage name
         const retrieveStorage = (storageName) => {
             return JSON.parse(localStorage.getItem(storageName)) || [];
-        }
+        };
 
         // A function to save data to custom local storage
         const updateStorage = (storageName, data) => {
             localStorage.setItem(storageName, JSON.stringify(data));
-        }
+        };
 
         const currentAuth = JSON.parse(localStorage.getItem('currentAuth')) || {
             loggedIn: false,
             userName: null
-        }
+        };
 
         const isAuth = currentAuth.loggedIn;
 
-        console.log(isAuth)
         if (isAuth) {
             window.location.href = './pages/content.html';
         } else {
+
+            const alertContent = [
+                'All fields are required. Please fill in all the fields.',
+                'Username is already taken. Please choose another one.',
+                'Passwords does not match. Please try again.',
+                'Invalid username or password. Please try again.'
+            ]
+
             const authContent = {
                 'block1': [
                     `
@@ -110,7 +155,7 @@ class LandingPage extends HTMLElement {
                         </div>
                     `
                 ]
-            }
+            };
     
             this.innerHTML = `
                 <div id="landing-page-bg">
@@ -143,7 +188,7 @@ class LandingPage extends HTMLElement {
                     // Re-attach event listeners after updating the content
                     attachEventListeners();
                 }, 1000);
-            }
+            };
     
             // A function that considers which function to attach with the current content
             const attachEventListeners = () => {
@@ -153,120 +198,127 @@ class LandingPage extends HTMLElement {
     
                 if (getStartedButton) {
                     getStartedButton.addEventListener('click', () => changeContent(1));
-                }
+                };
     
                 if (signInSwitchButton) {
                     signInSwitchButton.addEventListener('click', () => changeContent(2));
-                }
+                    setupSignUp();
+                    window.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' && !isDisplayModal) startSignUp();
+                    });
+                };
                 
                 if (signUpSwitchButton) {
                     signUpSwitchButton.addEventListener('click', () => changeContent(1));
-                }
-
-                // Attach event listeners after content is updated
-                setTimeout(() => {
                     setupSignIn();
-                    setupSignUp();
-                }, 0);
+                    window.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' && !isDisplayModal) startSignIn();
+                    });
+                };
+            };
+
+            const startSignUp = () => {
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirm-password').value;
+
+                // Check if any field is empty
+                if (!username || !password || !confirmPassword) {
+                    createAlertModal(alertContent[0]);
+                    return;
+                };
+
+                // Retrieve the existing profile array from local storage
+                let profile = retrieveStorage('profile');
+
+                // Check if the username or password is already taken
+                const isUsernameTaken = profile.some(user => user.user === username);
+
+                if (isUsernameTaken) {
+                    createAlertModal(alertContent[1])
+                    return;
+                };
+
+                if (password === confirmPassword) {
+                    // Create a new user object
+                    const newUser = {
+                        user: username,
+                        password: password
+                    };
+
+                    // Add the new user object to the profile array
+                    profile.push(newUser);
+
+                    // Save the updated profile array to local storage
+                    updateStorage('profile', profile);
+
+                    // Set the currentAuth object in local storage
+                    const currentAuth = {
+                        loggedIn: true,
+                        userName: username
+                    };
+
+                    updateStorage('currentAuth', currentAuth)
+
+                    // Redirect to the diary list page
+                    window.location.href = './pages/content.html';
+                } else {
+                    createAlertModal(alertContent[2]);
+                };
             }
     
             // A function to set up sign-up
             const setupSignUp = () => {
                 const signUpButton = document.getElementById('sign-up-button');
                 if (signUpButton) {
-                    signUpButton.addEventListener('click', function () {
-                        const username = document.getElementById('username').value;
-                        const password = document.getElementById('password').value;
-                        const confirmPassword = document.getElementById('confirm-password').value;
-    
-                        // Check if any field is empty
-                        if (!username || !password || !confirmPassword) {
-                            alert('All fields are required. Please fill in all the fields.');
-                            return;
-                        }
-    
-                        // Retrieve the existing profile array from local storage
-                        let profile = retrieveStorage('profile');
-    
-                        // Check if the username or password is already taken
-                        const isUsernameTaken = profile.some(user => user.user === username);
-    
-                        if (isUsernameTaken) {
-                            alert('Username is already taken. Please choose another one.');
-                            return;
-                        }
-    
-                        if (password === confirmPassword) {
-                            // Create a new user object
-                            const newUser = {
-                                user: username,
-                                password: password
-                            };
-    
-                            // Add the new user object to the profile array
-                            profile.push(newUser);
-    
-                            // Save the updated profile array to local storage
-                            updateStorage('profile', profile);
-    
-                            // Set the currentAuth object in local storage
-                            const currentAuth = {
-                                loggedIn: true,
-                                userName: username
-                            };
-    
-                            updateStorage('currentAuth', currentAuth)
-    
-                            // Redirect to the diary list page
-                            window.location.href = './pages/content.html';
-                        } else {
-                            alert('Passwords do not match. Please try again.');
-                        }
-                    });
-                }
+                    signUpButton.addEventListener('click', startSignUp);
+                };
+            };
+
+            //  Function that start sign in operation
+            const startSignIn = () => {
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                // Check if any field is empty
+                if (!username || !password) {
+                    createAlertModal(alertContent[0]);
+                    return;
+                };
+
+                if (verifyUser(username, password)) {
+                    // Set the currentAuth object in local storage
+                    const currentAuth = {
+                        loggedIn: true,
+                        userName: username
+                    };
+
+                    updateStorage('currentAuth', currentAuth);
+
+                    // Redirect to the diary list page
+                    window.location.href = './pages/content.html';
+                } else {
+                    createAlertModal(alertContent[3]);
+                };
             }
 
             // A function to set up sign-in
             const setupSignIn = () => {
                 const signInButton = document.getElementById('sign-in-button');
                 if (signInButton) {
-                    signInButton.addEventListener('click', function () {
-                        const username = document.getElementById('username').value;
-                        const password = document.getElementById('password').value;
-    
-                        // Check if any field is empty
-                        if (!username || !password) {
-                            alert('All fields are required. Please fill in all the fields.');
-                            return;
-                        }
-    
-                        if (verifyUser(username, password)) {
-                            // Set the currentAuth object in local storage
-                            const currentAuth = {
-                                loggedIn: true,
-                                userName: username
-                            };
-    
-                            updateStorage('currentAuth', currentAuth);
-    
-                            // Redirect to the diary list page
-                            window.location.href = './pages/content.html';
-                        } else {
-                            alert('Invalid username or password. Please try again.');
-                        }
-                    });
-                }
-            }
+                    signInButton.addEventListener('click', startSignIn);
+                };
+            };
 
             // A function to verify if the username and password exist in local storage
             const verifyUser = (username, password) => {
                 const profile = retrieveStorage('profile');
                 return profile.some(user => user.user === username && user.password === password);
-            }
+            };
     
             attachEventListeners();
-        }
-    }
-}
+        };
+    };
+};
 
 customElements.define('landing-page', LandingPage);

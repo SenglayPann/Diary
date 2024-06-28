@@ -48,17 +48,34 @@ class Diarylist extends HTMLElement {
             const navigatorItems = navigatorBar.querySelectorAll('.navigator-item');
             const diaryContentButton = document.getElementById('diary-entry-content-button');
             const dashboardContent = document.getElementById('dashboard-entry-content-button');
-            diaryContentButton.addEventListener('click', renderDiaries);
-            dashboardContent.addEventListener('click', showDashboard);
-            
-            navigatorItems.forEach(item => {
-                item.addEventListener('click', () => {
+            const floatDiaryAdder = document.getElementById('float-diary-adder');
+
+            const updateNavigatorListener = (trigger) => {
+                trigger.addEventListener('click', () => {
                     // Remove 'active' class from all items
                     navigatorItems.forEach(navItem => navItem.classList.remove('active'));
                     
                     // Add 'active' class to the clicked item
-                    item.classList.add('active');
+                    trigger.classList.add('active');
                 });
+            };
+
+            diaryContentButton.addEventListener('click', renderDiaries);
+            dashboardContent.addEventListener('click', showDashboard);
+            
+            navigatorItems.forEach((item) => {
+                updateNavigatorListener(item);
+            });
+
+            floatDiaryAdder.addEventListener('click', () => {
+                navigatorItems.forEach(navItem => navItem.classList.remove('active'));
+                    
+                navigatorItems[0].classList.add('active')
+            });
+
+            navigatorItems[1].addEventListener('click', () => {
+                    
+                floatDiaryAdder.style.display = 'flex';
             });
 
             renderDiaries();
