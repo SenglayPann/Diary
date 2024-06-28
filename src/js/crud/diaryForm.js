@@ -7,7 +7,7 @@ export const showDiaryForm = () => {
     const emptyListIndicator = document.getElementById('empty-list-indicator');
     emptyListIndicator.innerHTML = ''
     diaryContainer.innerHTML = `
-        <form id="diary-form" class="form">
+        <form id="diary-form" class="form fade-in1">
             <div class="input-field">
                 <label for="diary-title">Diary Title</label>
                 <input id="diary-title" type="text" placeholder="Enter diary title">

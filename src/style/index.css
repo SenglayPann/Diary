@@ -1,6 +1,7 @@
 @import url('./component-styles/navbar.css');
 @import url('./component-styles/diary-list.css');
 @import url('./component-styles/landing-page.css');
+@import url('./component-styles/footer.css');
 
 * {
     box-sizing: border-box;

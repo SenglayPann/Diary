@@ -112,8 +112,10 @@
 }
 
 #main-content {
+    display: flex;
     flex-basis: auto;
     padding: var(--pd6);
+    padding-bottom: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -123,7 +125,6 @@
 }
 
 #greeting-phrase {
-    padding: 0 var(--pd3);
     font-family: 'Raleway';
     font-size: var(--fs1);
     width: 100%;
@@ -132,6 +133,7 @@
     align-items: center;
     gap: var(--gap2);
     padding: var(--pd6) 0;
+    padding-top: 0;
 }
 
 .edit-button, .delete-button {
@@ -157,7 +159,7 @@
 
 .big-phrase {
     font-family: 'Shameimaru Sans Alternatives';
-    font-size: var(--fs5);
+    font-size: var(--fs3);
     text-align: center;
     text-shadow: var(--text-sd2);
     line-height: 1.2em;
@@ -172,6 +174,10 @@
 
 
 #diary-card-container {
+    /* flex-grow: 1; */
+    margin-bottom: auto;
+    padding-top: var(--pd6);
+    padding-bottom: var(--pd6);
     width: 100%;
     /* height: 100%; */
     display: flex;
@@ -180,7 +186,30 @@
     justify-content: center;
     gap: var(--gap2);
     padding-left: var(--pd1);
-    /* overflow: scroll; */
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
+#diary-card-container::-webkit-scrollbar {
+    width: 8px;  /* Width of the scrollbar */
+}
+
+#diary-card-container::-webkit-scrollbar-track {
+    background: #f1f1f1;  /* Background of the scrollbar track */
+    border-radius: 4px;
+}
+
+#diary-card-container::-webkit-scrollbar-thumb {
+    background: #888;  /* Color of the scrollbar thumb */
+    border-radius: 4px;
+}
+
+#diary-card-container::-webkit-scrollbar-thumb:hover {
+    background: #555;  /* Color of the scrollbar thumb on hover */
+}
+
+.form {
+    padding-bottom: var(--pd6);
 }
 
 .header-container {
@@ -196,6 +225,10 @@
     min-height: var(--he2);
 }
 
+.diary-container-item-full {
+    height: auto !important;
+}
+
 .diary-card {
     display: flex;
     font-family: 'Raleway';
@@ -208,7 +241,7 @@
     color: var(--black-secondary) ;
     box-shadow: var(--shadow-secondary);
     border: 1px solid var(--bg-color1);
-    transition: box-shadow 0.15s ease, transform 0.15s ease, border 0.15s ease;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border 0.15s ease , height .3s ease;
 }
 
 #diary-content{
@@ -267,7 +300,7 @@ label {
 .diary-card-content {
     font-size: var(--fs2);
     font-weight: 400;
-    
+    /* overflow: scroll; */
 }
 
 .header-container, .header-left, .header-right{
@@ -318,7 +351,7 @@ label {
     border-radius: 50%;
     color: var(--bg-color1);
     border: 1px solid var(--black-secondary);
-    bottom: calc(var(--mg5) + 26px);
+    bottom: calc(var(--mg5) + 46px);
     right: calc(var(--mg5));
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -361,10 +394,27 @@ label {
     border-radius: var(--br1);
 }
 
+.fade-in1 {
+    animation: fadeIn .5s ease;
+}
 
 .desolve {
-    animation: desolve 3.5s;
+    animation: desolve 2.5s;
 }
+
+.bouncing-pop-up {
+    animation: bouncing-pop-up .5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 
 @keyframes desolve {
     0% {
@@ -384,6 +434,30 @@ label {
         opacity: 0;
     }
 }
+
+@keyframes bouncing-pop-up {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    40% {
+        transform: scale(1.03);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(0.97);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1.02);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 
 @media (min-width: 912px) {
     :root { 
@@ -416,19 +490,19 @@ label {
     }
 
     #greeting-phrase {
-        padding:var(--pd6) 0 var(--pd-body) 0;
+        padding:var(--pd6) 0 var(--pd6) 0;
     }
 
     .auth-name {
         color: var(--green-primary);
         text-shadow: var(--shadow-primary);
-        font-size: var(--fs6);
+        font-size: var(--fs4);
     }
     
     .auth-name1 {
         color: var(--blue-primary);
         text-shadow: var(--shadow-primary);
-        font-size: var(--fs6);
+        font-size: var(--fs5);
     
     }
 
@@ -484,7 +558,7 @@ label {
     #float-diary-adder {
         width: 54px;
         height: 54px;
-        bottom: calc(var(--mg5) + 46px);
+        bottom: calc(var(--mg5) + 76px);
         right: calc(var(--mg5) + 36px);
     }
 

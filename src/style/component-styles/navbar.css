@@ -32,6 +32,24 @@ nav {
     z-index: -1;
 }
 
+#header-top-right {
+    display: flex;
+    align-items: center;
+    gap: var(--gap1);
+}
+
+#logout-button {
+    border: 1px solid transparent;
+    background: transparent;
+    padding: var(--pd1) var(--pd3);
+    border-radius: var(--br1);
+    margin-right: var(--mg1);
+    transition: border .1s ease;
+}
+
+#logout-button:hover {
+    border: 1px solid var(--black-primary);
+}
 
 #site-name {
     font-size: var(--fs3);

@@ -19,7 +19,7 @@ export const showDiaryEditForm = (entryId) => {
         const diaryToEdit = diaryEntries[indexToEdit];
         emptyListIndicator.innerHTML = ''
         diaryContainer.innerHTML = `
-            <form id="diary-form" class="form">
+            <form id="diary-form" class="form fade-in1">
                 <div class="input-field">
                     <label for="diary-title">Diary Title</label>
                     <input id="diary-title" type="text" value="${diaryToEdit.title}" placeholder="Enter diary title">

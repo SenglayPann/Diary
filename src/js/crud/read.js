@@ -1,7 +1,8 @@
 import { retrieveStorage } from '../localStorage/retrieve.js';
 import { Auth } from '../localStorage/auth.js';
 import { showDiaryForm } from './diaryForm.js';
-import { addEventListeners } from './addEvenListeners.js';
+import { addEventListeners } from './addButtonEvenListeners.js';
+import { addDiaryCardsEventListener } from './addCardEventListener.js';
 
 // Function to get diary entries for the current user
 export const renderDiaries = () => {
@@ -19,7 +20,7 @@ export const renderDiaries = () => {
         // Loop through each diary entry and create HTML
         diaryEntries.forEach(entry => {
             const diaryCard = document.createElement('div');
-            diaryCard.classList.add('diary-card', 'diary-container-item');
+            diaryCard.classList.add('diary-card', 'diary-container-item', 'fade-in1');
             diaryCard.innerHTML = `
                 <div class="diary-main-content">
                     <!-- card header -->
@@ -47,13 +48,13 @@ export const renderDiaries = () => {
 
         emptyListIndicator.innerHTML = ''; // Clear empty list indicator
     } else {
-        emptyListIndicator.innerHTML = '<div class="empty-list">There are no diary entries yet.</div>';
+        emptyListIndicator.innerHTML = '<div class="empty-list fade-in1">There are no diary entries yet.</div>';
     }
 
     // Add a diary card adder button
     diaryContainer.innerHTML += `
-        <div id="diary-card-adder" class="diary-container-item diary-add-button">
-            <div id="add-sign">+</div>
+        <div id="diary-card-adder" class="diary-container-item diary-add-button fade-in1">
+            <div id="add-sign"><img src="../assets/icons/add-outline-black.svg"></div>
         </div>
     `;
 
@@ -62,4 +63,5 @@ export const renderDiaries = () => {
     document.getElementById('diary-card-adder').addEventListener('click', showDiaryForm);
     document.getElementById('float-diary-adder').addEventListener('click', showDiaryForm);
     addEventListeners();
+    addDiaryCardsEventListener();
 };
