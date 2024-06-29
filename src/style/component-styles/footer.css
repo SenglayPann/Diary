@@ -1,0 +1,59 @@
+@import url('../root-styles/root.css');
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--pd1);
+    border-top: 1px solid black;
+}
+
+#og-slider-container {
+    width: 150px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.slider-fade-in {
+    animation: slider-fade-in .5s;
+}
+
+@keyframes slider-fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(.6);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#og-slider {
+    width: 100%;
+    height: 100%;
+}
+
+#og-slider>img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+#author>a {
+    text-decoration: underline;
+    color: var(--blue-secondary);
+}
+
+#author>a:hover {
+    color: var(--blue-primary);
+}
+
+@media (min-width: 912px) {
+    #og-slider-container {
+        width: calc(var(--w-slider) * 1.5);
+        height: calc(var(--h-slider) * 1.5);
+    }
+}
