@@ -168,7 +168,7 @@
 .small-phrase {
     text-wrap: wrap;
     padding: 10px;
-    background-color: var(--yellow);
+    background-color: var(--blue-primary);
     border-radius: var(--br1);
 }
 
@@ -528,6 +528,7 @@ label {
     #diary-card-container {
         gap: var(--gap5);
         padding: var(--pd2);
+        padding: var(--pd6);
     }
 
     #greeting-phrase {

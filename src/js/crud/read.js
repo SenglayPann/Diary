@@ -54,7 +54,7 @@ export const renderDiaries = () => {
     // Add a diary card adder button
     diaryContainer.innerHTML += `
         <div id="diary-card-adder" class="diary-container-item diary-add-button fade-in1">
-            <div id="add-sign"><img src="../assets/icons/add-outline-black.svg"></div>
+            <div id="add-sign"><img src="../assets/icons/add-outline-blue.svg"></div>
         </div>
     `;
 

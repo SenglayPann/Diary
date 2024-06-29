@@ -7,6 +7,7 @@ class Header extends HTMLElement {
     }
 
     connectedCallback() {
+
         this.innerHTML = `
         <nav id="navbar">
             <div id="site-name">Diary Aplication</div>
@@ -21,11 +22,21 @@ class Header extends HTMLElement {
             </div>
         </nav>
         `;
+
         this.setAttribute('class', 'absolute-item')
 
+        const darkModeToggler = document.getElementById('dark-mode-toggler');
         const themeTogglerHandle = document.getElementById('toggler-handle');
         const themeTogglerHandleContainer = document.getElementById('dark-mode-toggler');
         const logOutButton = document.getElementById('logout-button');
+        const addSignImg = document.getElementById('add-sign');
+        darkModeToggler.addEventListener('click', () => {
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })
 
         themeTogglerHandleContainer.addEventListener('click', () => {
             themeTogglerHandle.classList.toggle('is-bg-black');

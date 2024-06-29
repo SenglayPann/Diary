@@ -218,9 +218,9 @@ class LandingPage extends HTMLElement {
             };
 
             const startSignUp = () => {
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-                const confirmPassword = document.getElementById('confirm-password').value;
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value.trim();
+                const confirmPassword = document.getElementById('confirm-password').value.trim();
 
                 // Check if any field is empty
                 if (!username || !password || !confirmPassword) {
@@ -277,8 +277,8 @@ class LandingPage extends HTMLElement {
 
             //  Function that start sign in operation
             const startSignIn = () => {
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value.trim();
 
                 // Check if any field is empty
                 if (!username || !password) {
