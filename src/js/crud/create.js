@@ -9,8 +9,46 @@ export const createDiaryEntry = () => {
     const date = document.getElementById('diary-date').value;
     const content = document.getElementById('diary-content').value;
 
+    let isDisplayModal = false;
+
+    // a function to create alert modal
+    const createAlertModal = (message) => {
+        isDisplayModal = true
+        const landingPageContent = document.getElementById('main-content');
+        const alertModalContainer = document.createElement('div');
+        alertModalContainer.setAttribute('id', 'alert-modal-container');
+        alertModalContainer.setAttribute('class', 'fade-in-no-delay-2');
+        alertModalContainer.innerHTML = `
+            <div id="alert-modal">
+                <div class="alert-modal-closing-button" id="semi-alert-modal-closing-button">
+                    <img src="../assets/icons/close.svg">
+                </div>
+                <img src="../assets/interactive_graphics/exclamation-mark.png" alt="">
+                <p>${message}<p/>
+                <button class="alert-modal-closing-button">OK</button>
+            <div>
+        `;
+        landingPageContent.appendChild(alertModalContainer) 
+
+        Array.from(document.getElementsByClassName('alert-modal-closing-button')).forEach(button => button.addEventListener('click', () => {
+            
+            alertModalContainer.classList.add('fade-out-no-delay-1')
+            setTimeout(() => {
+                closeAlertModal();
+            }, 290);
+        }));
+    };
+
+    // a function to close the alert modal
+    const closeAlertModal = () => {
+        isDisplayModal = false;
+        const landingPageContent = document.getElementById('main-content');
+        landingPageContent.removeChild(landingPageContent.lastElementChild);
+
+    };
+
     if (!title || !date || !content) {
-        alert('All fields are required. Please fill in all the fields.');
+        createAlertModal('All fields are required. Please fill in all the fields.');
         return;
     }
 
