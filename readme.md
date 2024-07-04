@@ -7,7 +7,10 @@
 # Scope
 
 - All The data are stored in the local storage.
-- The platform is capable of CRUD performance including data filtering and search for a specific diary or related diaries.
+- The platform is capable of CRUD performance including data filtering, creating, reading, updating and deleting.
+- Authentication
+- Dark mode
+- Dashboard
 
 # References
 
@@ -33,6 +36,70 @@
 - **Element naming:** Elements inside frames must have proper names corresponding to their purpose and usage.
 - **Frame alignment:** Frames must have proper alignment and all have the exact same spacing and gap which is 50px gap between each frame.
 - **Frame placement:** All frames must follow their placement, the frames containing the components for each resolution must be on the right, whereas, the frames that contain the UI clone of each page is on the left.
+
+# Project structure
+
+```python
+project-root/
+├── assets/
+│   ├── favicon/
+│   ├── icons/
+│   ├── interactive_graphics/
+│   └── organization/
+├── components/
+│   ├── diarylist.js
+│   ├── edit.js
+│   ├── footer.js
+│   ├── header.js
+│   └── landing-page.js
+├── pages/
+│   └── content.html
+├── src/
+│   └── js/
+│       ├── crud/
+│       ├── localStorage/
+│       └── period.js
+├── style/
+│   ├── component-styles/
+│   ├── fonts/
+│   ├── root-styles/
+│   └── index.css
+├── .gitignore
+├── .reviewboardrc
+├── index.html
+└── readme.md
+
+```
+
+### Folder and File Explanations
+
+- **assets/**: Contains static assets like images, icons, and other graphical content.
+    - **favicon/**: Likely contains the favicon files for the website.
+    - **icons/**: Contains icon files used across the application.
+    - **interactive_graphics/**: Contains interactive graphical assets.
+    - **organization/**: Possibly holds organization-related media or documents.
+- **components/**: Holds JavaScript files for various components of the application.
+    - **diarylist.js**: Manages the diary list component.
+    - **edit.js**: Manages the editing functionality.
+    - **footer.js**: Contains the code for the footer component.
+    - **header.js**: Contains the code for the header component.
+    - **landing-page.js**: Manages the landing page component.
+- **pages/**: Contains HTML files for different pages of the application.
+    - **content.html**: A specific HTML page within the application.
+- **src/**: Contains source code for the application.
+    - **js/**: JavaScript code for the application.
+        - **crud/**: Likely contains JavaScript files related to Create, Read, Update, Delete operations.
+        - **localStorage/**: Manages local storage functionalities.
+        - **period.js**: Manages functionalities related to periods or intervals.
+- **style/**: Contains stylesheets and font files for the application.
+    - **component-styles/**: CSS files specific to individual components.
+    - **fonts/**: Font files used in the application.
+    - **root-styles/**: Root-level styles that are likely applied globally.
+    - **index.css**: The main CSS file for the application.
+- **.gitignore**: Specifies files and directories that Git should ignore.
+- **.reviewboardrc**: Configuration file for Review Board, a code review tool.
+- **index.html**: The main HTML file of the application.
+- **readme.md**: The README file providing information about the project.
 
 # Font Families
 
@@ -111,11 +178,11 @@
 **HTML:**
 
 - The file must contain all lower-case letters.
-- The file must have a **‘ - ’** in between each new word **e.g : tv-show.html**
+- The file must have a **‘ - ’** in between each new word **e.g : Landing-page.html**
 
 **Javascript:**
 
-- The file must be named according to camelCasing. **e.g : tvShows.js**
+- The file must be named according to camelCasing. **e.g : LadingPage.js**
 
 **CSS:**
 
@@ -124,13 +191,9 @@
 
 Classes, function and variable naming
 
-**HTML:**
-
-- **Class naming** : class names must use ‘ - ’ to separate each word, with the names corresponding to their sections. **e.g: navbar-container**
-
 **Javascript:**
 
-- **Function naming** : The function names must follow the camelCasing naming convention and the names must be relevant to their usage. **e.g: buttonToggle**
+- **Function naming** : The function names must follow the camelCasing naming convention and the names must be relevant to their usage. **e.g: buttonToggler**
 
 **Note**: Functions must contain the function keyword (no usage of arrow functions, unless it is an anonymous function).
 
@@ -139,8 +202,6 @@ Classes, function and variable naming
 **Note**: Variables must be declared with their ‘const’ or ‘let’
 
 # Comment rules
-
-**Common comments rule**: Regardless of the file type, the comments must contain a prefix followed by a **‘ : ’** and then an explanation/description.  **e.g : Card : Product card**
 
 **HTML:**
 
