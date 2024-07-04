@@ -56,6 +56,14 @@
     padding: calc(5vh) 0;
 }
 
+.alert-modal-closing-button {
+    color: var(--black-primary);
+}
+
+.alert-modal-closing-button:hover {
+    color: var(--blue-primary) !important;
+}
+
 #body {
     display: flex; 
     width: 100vw;
