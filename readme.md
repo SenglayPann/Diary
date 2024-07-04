@@ -13,6 +13,7 @@
 
 - [Figma Design](https://www.figma.com/design/xmVPjXXO6osi4aFEh4a49b/Diary-Web-Application?node-id=1-7&t=huAU5NdVCc9aXn3S-1)
 - [IA](https://www.figma.com/board/tbruWfiyZ8AIQVxqiI7RMx/Diary-Web-Application?node-id=0-1&t=xC6mooVQyZGLCQSs-1)
+- [Flow Guide](https://www.figma.com/board/pQnhViqTKNi5dE4SXmBAuG/Diary-Application-flow-guide?node-id=0-1&t=vWLZ8zEdeuFmWNEt-1)
 
 # Technologies
 
@@ -38,7 +39,7 @@
 - **Heading:** Trueno, **Shameimaru Sans**
 - **text:** Raleway, Roboto
 
-# Colors
+# Colors + Gradients
 
 - green-primary: #2EE4B1
 - green-secondary: #A0F28A
@@ -49,6 +50,61 @@
 - black-secondary: #333333
 - gray-primary: #F2F2F2
 - gray-secondary: #C0C0C0
+
+```
+:root {
+    --bg-color1: #f8f8f8;
+    --green-primary: #2EE4B1;
+    --green-secondary: #A0F28A;
+    --blue-primary: #3498DB;
+    --blue-secondary: #00B5E4;
+    --red-primary: #E74C3C;
+    --red-secondary: #C0392B;
+    --red-third: #CC5C67;
+    --purple: #8A2BE2;
+    --yellow: #F9F871;
+    --black-primary: #050505;
+    --black-secondary: #333333;
+    --gray-primary: #F2F2F2;
+    --gray-secondary: #C0C0C0;
+    --gradient-secondary: linear-gradient(36deg, #3498DB, var(--purple), #F9F871);
+    --gradient-primary: linear-gradient(45deg, #2EE4B1, var(--purple), #F9F871);
+    --gradient-third: linear-gradient(45deg, #2EE4B1, var(--blue-secondary) , var(--purple) , var(--yellow));
+    --shadow-primary: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    --shadow-secondary: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    --text-sd1: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    --text-sd2: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+```
+
+## Dark mode theme:
+
+```css
+
+[data-theme="dark"] {
+    --bg-color1: #121212;
+    --green-primary: #2EE4B1;
+    --green-secondary: #2C7A69;
+    --blue-primary: #3498DB;
+    --blue-secondary: #2980B9;
+    --red-primary: #E74C3C;
+    --red-secondary: #C0392B;
+    --red-third: #A93226;
+    --purple: #8A2BE2;
+    --yellow: #F9F871;
+    --black-primary: #F8F8F8;
+    --black-secondary: #E0E0E0;
+    --gray-primary: #333333;
+    --gray-secondary: #4F4F4F;
+    --gradient-secondary: linear-gradient(36deg, #2980B9, var(--purple), #F9F871);
+    --gradient-primary: linear-gradient(45deg, #2C7A69, var(--purple), #F9F871);
+    --gradient-third: linear-gradient(45deg, #2EE4B1, var(--blue-secondary), var(--purple), var(--yellow));
+    --shadow-primary: 0 4px 8px rgba(255, 255, 255, 0.2), 0 6px 20px rgba(255, 255, 255, 0.19);
+    --shadow-secondary: 0 4px 6px rgba(255, 255, 255, 0.1), 0 1px 3px rgba(255, 255, 255, 0.08);
+    --text-sd1: 1px 1px 3px rgba(255, 255, 255, 0.3);
+    --text-sd2: 2px 2px 4px rgba(255, 255, 255, 0.2);
+}
+```
 
 # File naming:
 
